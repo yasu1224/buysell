@@ -11,8 +11,8 @@ class MineTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mines')->truncate(); //2回目実行の際にシーダー情報をクリア
-        DB::table('mines')->insert([
+        DB::table('mine')->truncate(); //2回目実行の際にシーダー情報をクリア
+        DB::table('mine')->insert([
             'name' => 'テストユーザー1',
             'age' => '30',
         ]);

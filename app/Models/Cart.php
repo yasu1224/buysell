@@ -12,20 +12,19 @@ class Cart extends Model
     ];
 
     public function showCart()
-    {
-        $user_id = Auth::id();
-        $data['my_carts'] = $this->where('user_id', $user_id)->get();
-        
-        $data['count']=0;
-        $data['sum']=0;
+   {
+       $user_id = Auth::id();
+       $data['my_carts'] = $this->where('user_id',$user_id)->get();
 
-        foreach($data['my_carts'] as $my_cart){
-            $data['count']++;
-            $data['sum'] += $my_cart->stock->fee;
-        }
-
-        return $data;
-    }
+       $data['count']=0;
+       $data['sum']=0;
+       
+       foreach($data['my_carts'] as $my_cart){
+           $data['count']++;
+           $data['sum'] += $my_cart->stock->fee;
+       }
+       return $data;
+   }
 
 
     public function stock()

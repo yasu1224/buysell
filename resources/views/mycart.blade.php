@@ -26,9 +26,10 @@
                        </div>
                    @endforeach
 
-               </div>
+
 
                <a href="/">商品一覧へ</a>
+               </div>
            </div>
        </div>
    </div>

@@ -50,4 +50,9 @@ class ShopController extends Controller
         return view('mycart',$data)->with('message',$message);//追記
  
     }
+
+    public function checkout(Cart $cart)
+    {
+        return view('checkout');
+    }
 }

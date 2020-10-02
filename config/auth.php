@@ -41,6 +41,7 @@ return [
             'provider' => 'users',
         ],
 
+        // Admin用の認証を追加
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
@@ -50,7 +51,7 @@ return [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
-        ],
+        ]
     ],
 
     /*
@@ -76,10 +77,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-    'admins' => [
-        'driver' => 'eloquent',
-        'model' => App\Models\Admin::class,
-    ]
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

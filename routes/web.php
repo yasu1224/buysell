@@ -30,7 +30,9 @@ Route::namespace('User')->prefix('user')->name('user.')->group(function () {
         // TOPページ
         Route::resource('home', 'HomeController', ['only' => 'index']);
 
+
     });
+
 });
 
 // 管理者
@@ -53,11 +55,11 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
 });
 
-// Route::group(['middleware' => ['auth']], function(){
-//     Route::get('/mycart', 'ShopController@myCart');
-//     Route::post('/mycart', 'ShopController@addMycart');
-//     Route::post('/cartdelete', 'ShopController@deleteCart');
-//     Route::post('/checkout', 'ShopController@checkout');
-// });
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/mycart', 'ShopController@myCart');
+    Route::post('/mycart', 'ShopController@addMycart');
+    Route::post('/cartdelete', 'ShopController@deleteCart');
+    Route::post('/checkout', 'ShopController@checkout');
+});
 
 Auth::routes();

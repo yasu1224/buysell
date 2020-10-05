@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="{{ route('admin.adminindex') }}">登録商品一覧</a>
                 </div>
             </div>
         </div>

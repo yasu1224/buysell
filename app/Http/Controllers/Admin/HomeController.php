@@ -31,4 +31,11 @@ class HomeController extends Controller
         return view('admin.index',  compact('stocks'));
     }
 
+    public function create()
+    {
+        //
+        return view('admin.create');
+    }
+
+
 }

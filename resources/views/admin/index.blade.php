@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form action="" method="GET">
+                    <form action="{{ route('admin.admincreate') }}" method="GET">
                     <button type="submit" class="btn btn-primary">
                       新規投稿
                     </button>
@@ -35,7 +35,7 @@
                       <tbody>
                       @foreach($stocks as $stock)
                           <tr>
-                            <th><img src="{{ asset('image/' . $stock->imgpath) }}">  </th>
+                            <th><img class="cart" src="{{ asset('image/' . $stock->imgpath) }}" >  </th>
                             <th>{{ $stock->id }}</th>
                             <th>{{ $stock->name }}</th>
                             <th>{{ $stock->detail }}</th>

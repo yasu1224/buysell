@@ -51,6 +51,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         // TOPページ
         Route::get('/home', 'HomeController@home')->name('adminhome');
         Route::get('/index', 'HomeController@index')->name('adminindex');
+        Route::get('/create', 'HomeController@create')->name('admincreate');
+
 
     });
 

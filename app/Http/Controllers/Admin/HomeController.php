@@ -37,5 +37,19 @@ class HomeController extends Controller
         return view('admin.create');
     }
 
+    public function store(Request $request)
+    {
+
+
+    
+            $stock = new Stock();
+
+            $stock->name = $request->input('name');
+            $stock->detail = $request->input('detail');
+            $stock->fee = $request->input('fee');
+            $stock->imgpath = $request->input('imgpath');
+                $stock->save();
+                return redirect('admin/index');
+    }
 
 }

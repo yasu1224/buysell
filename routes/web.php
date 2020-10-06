@@ -52,6 +52,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/home', 'HomeController@home')->name('adminhome');
         Route::get('/index', 'HomeController@index')->name('adminindex');
         Route::get('/create', 'HomeController@create')->name('admincreate');
+        Route::post('/store', 'HomeController@store')->name('adminstore');
+
 
 
     });

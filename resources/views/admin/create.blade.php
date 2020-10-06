@@ -23,18 +23,20 @@
                             </ul>
                         </div>
                     @endif
-                    <form action="" method="POST">
+                    <form action="{{ route('admin.adminstore') }}" method="POST" enctype='multipart/form-data'>
                     @csrf
                         商品名
                         <input type="text" name="name">
                         <br>
                         販売価格
-                        <input type="text" name="title">
+                        <input type="text" name="fee">
                         <br>
                         商品詳細
-                        <textarea name="contact"></textarea>
+                        <textarea name="detail"></textarea>
                         <br>
-                        
+                        画像アップロード
+                        <input type="file" name="imgpath">
+                        <br>
 
                         <input class="btn btn-info" type="submit" value="登録する">
                     </form>

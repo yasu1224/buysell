@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\StockRequest;
 use App\Models\Stock;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,10 @@ class HomeController extends Controller
         $query->orderBy('created_at', 'asc');
         $stocks = $query->paginate(20);
 
+        // $is_image = false;
+        // if (Storage::disk('local')->exists('public/Stock_images/')) {
+        //     $is_image = true;
+        // }
         // dd($contacts);
         return view('admin.index',  compact('stocks'));
     }
@@ -37,17 +43,16 @@ class HomeController extends Controller
         return view('admin.create');
     }
 
-    public function store(Request $request)
+    public function store(StockRequest $request)
     {
-
-
-    
             $stock = new Stock();
-
             $stock->name = $request->input('name');
             $stock->detail = $request->input('detail');
             $stock->fee = $request->input('fee');
-            $stock->imgpath = $request->input('imgpath');
+            $stock->imgpath = $request->imgpath->store('public/Stock_images');
+            $stock->imgpath = str_replace('public/Stock_images', '', $stock->imgpath);
+            // $stock->imgpath = $request->input('imgpath');
+            // dd($stock);
                 $stock->save();
                 return redirect('admin/index');
     }

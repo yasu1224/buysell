@@ -49,7 +49,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function () {
 
         // TOPページ
-        Route::resource('home', 'HomeController', ['only' => 'index']);
+        Route::get('/home', 'HomeController@home')->name('adminhome');
+        Route::get('/index', 'HomeController@index')->name('adminindex');
+        Route::get('/create', 'HomeController@create')->name('admincreate');
+        Route::post('/store', 'HomeController@store')->name('adminstore');
+
+
 
     });
 

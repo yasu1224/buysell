@@ -35,7 +35,7 @@
                       <tbody>
                       @foreach($stocks as $stock)
                           <tr>
-                            <th><img class="cart" src="{{ asset('image/' . $stock->imgpath) }}" >  </th>
+                            <th><img src="/storage/Stock_images/{{ $stock->imgpath }}" alt="" style="width: 100px;"/> </th>
                             <th>{{ $stock->id }}</th>
                             <th>{{ $stock->name }}</th>
                             <th>{{ $stock->detail }}</th>

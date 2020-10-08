@@ -16,7 +16,7 @@
                        <div class="mycart_box">
                            {{$my_cart->stock->name}} <br>                                
                            {{ number_format($my_cart->stock->fee)}}円 <br>
-                           <img src="/image/{{$my_cart->stock->imgpath}}" alt="" class="incart" >
+                           <img src="/storage/Stock_images/{{$my_cart->stock->imgpath}}" alt="" class="incart" >
                            <br>
                            <form action="/cartdelete" method="post">
                                @csrf

@@ -41,7 +41,7 @@
                             <th>{{ $stock->detail }}</th>
                             <th>{{ $stock->fee }}</th>
                             <th>{{ $stock->created_at }}</th>
-                            <td><a href="/">詳細を見る</a></td>
+                            <td><a href="{{ route('admin.adminshow', ['id' => $stock->id ]) }}">詳細を見る</a></td>
                           </tr>
                       @endforeach
                       </tbody>

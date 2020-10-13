@@ -57,4 +57,14 @@ class HomeController extends Controller
                 return redirect('admin/index');
     }
 
+    public function show($id)
+    {
+        // $contactという変数にContactForm::find($id);で情報を取り出す
+        $stock = Stock::find($id);
+        // return view('contact.show')でshowで取り出した情報を表示させれるようにする
+        return view('admin.show', 
+        // compact('contact', 'gender', 'age')は$を付けずに引数として渡すとshow.blade.phpで変数が使える
+        compact('stock'));
+    }
+
 }

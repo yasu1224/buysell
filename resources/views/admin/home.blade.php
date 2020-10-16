@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">メニュー</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    <a href="{{ route('admin.adminindex') }}">登録商品一覧</a>
+                    <a href="{{ route('admin.adminindex') }}">登録商品一覧</a><br>
+                    <a href="{{ url('/') }}">TOPページ</a>
                 </div>
             </div>
         </div>

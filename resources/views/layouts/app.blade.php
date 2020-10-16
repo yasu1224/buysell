@@ -102,7 +102,8 @@
         <p style="font-size:2.4em">Buysell</p><br>
         </div>
 
-        <p style="font-size:0.7em;">@copyright</p>
+        <p style="font-size:0.7em;">@copyright</p><br>
+        <a href="{{ route('admin.adminhome') }}">管理</a>
 
 </footer>
    </div>

@@ -67,4 +67,20 @@ class HomeController extends Controller
         compact('stock'));
     }
 
+    public  function edit($id){
+            $stock = Stock::findOrFail($id);
+            return view('admin.edit', compact('stock'));
+    }
+    public function update(Request $request, $id)
+    {
+        $stock = Stock::find($id);
+
+        $stock->name = $request->input('name');
+        $stock->fee = $request->input('fee');
+        $stock->detail = $request->input('detail');
+        $stock->imgpath = $request->imgpath->update('public/Stock_images');
+        $stock->imgpath = str_replace('public/Stock_images', '', $stock->imgpath);
+            $stock->save();
+            return redirect('admin/index');
+    }
 }

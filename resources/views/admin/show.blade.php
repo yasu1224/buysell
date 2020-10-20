@@ -30,6 +30,11 @@
                     更新日時:
                     {{ $stock->update_at }}
                     </form>
+
+                    <form action="{{ route('admin.adminedit', ['id' => $stock->id]) }}" method="GET">
+                    @csrf
+                        <input class="btn btn-info" type="submit" value="変更する">
+                    </form>
                 </div>
             </div>
         </div>

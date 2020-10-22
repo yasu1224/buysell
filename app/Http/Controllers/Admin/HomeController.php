@@ -78,7 +78,7 @@ class HomeController extends Controller
         $stock->name = $request->input('name');
         $stock->fee = $request->input('fee');
         $stock->detail = $request->input('detail');
-        $stock->imgpath = $request->imgpath->update('public/Stock_images');
+        $stock->imgpath = $request->imgpath->store('public/Stock_images');
         $stock->imgpath = str_replace('public/Stock_images', '', $stock->imgpath);
             $stock->save();
             return redirect('admin/index');

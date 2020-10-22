@@ -56,6 +56,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/show/{id}', 'HomeController@show')->name('adminshow');
         Route::get('/edit/{id}', 'HomeController@edit')->name('adminedit');
         Route::post('/update/{id}', 'HomeController@update')->name('adminupdate');
+        Route::post('/destroy/{id}', 'HomeController@destroy')->name('admindestroy');
 
     });
 

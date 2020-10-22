@@ -55,7 +55,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/store', 'HomeController@store')->name('adminstore');
         Route::get('/show/{id}', 'HomeController@show')->name('adminshow');
         Route::get('/edit/{id}', 'HomeController@edit')->name('adminedit');
-        Route::post('/update/{id}', 'HomeController@edit')->name('adminupdate');
+        Route::post('/update/{id}', 'HomeController@update')->name('adminupdate');
 
     });
 

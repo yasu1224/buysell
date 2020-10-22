@@ -57,4 +57,30 @@ class HomeController extends Controller
                 return redirect('admin/index');
     }
 
+    public function show($id)
+    {
+        // $contactという変数にContactForm::find($id);で情報を取り出す
+        $stock = Stock::find($id);
+        // return view('contact.show')でshowで取り出した情報を表示させれるようにする
+        return view('admin.show', 
+        // compact('contact', 'gender', 'age')は$を付けずに引数として渡すとshow.blade.phpで変数が使える
+        compact('stock'));
+    }
+
+    public  function edit($id){
+            $stock = Stock::findOrFail($id);
+            return view('admin.edit', compact('stock'));
+    }
+    public function update(Request $request, $id)
+    {
+        $stock = Stock::find($id);
+
+        $stock->name = $request->input('name');
+        $stock->fee = $request->input('fee');
+        $stock->detail = $request->input('detail');
+        $stock->imgpath = $request->imgpath->store('public/Stock_images');
+        $stock->imgpath = str_replace('public/Stock_images', '', $stock->imgpath);
+            $stock->save();
+            return redirect('admin/index');
+    }
 }

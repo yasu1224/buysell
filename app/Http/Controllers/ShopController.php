@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 use App\Models\Stock;
 use Illuminate\Support\Facades\Mail;
@@ -15,7 +16,7 @@ class ShopController extends Controller
     //
     public function index()
     {
-        $stocks = Stock::Paginate(6);
+        $stocks = Stock::orderBy("created_at", "DESC")->Paginate(6);
         return view('shop',compact('stocks')); //追記変更
     }
 

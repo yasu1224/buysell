@@ -83,4 +83,12 @@ class HomeController extends Controller
             $stock->save();
             return redirect('admin/index');
     }
+
+    public function destroy($id)
+    {
+        //
+        $stock = Stock::find($id);
+        $stock->delete();
+        return redirect('admin/index');
+    }
 }

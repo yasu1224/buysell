@@ -28,17 +28,34 @@
                     {{ $stock->created_at }}
                     <br>
                     更新日時:
-                    {{ $stock->update_at }}
+                    {{ $stock->updated_at }}
                     </form>
 
                     <form action="{{ route('admin.adminedit', ['id' => $stock->id]) }}" method="GET">
                     @csrf
                         <input class="btn btn-info" type="submit" value="変更する">
                     </form>
+
+                    <form action="{{ route('admin.admindestroy', ['id' => $stock->id]) }}" id="delete_{{ $stock->id }}" method="POST">
+                      @csrf
+                    <a href="#" class="btn btn-danger" data-id="{{ $stock->id }}" onclick="deletePost(this);">削除する</a>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+// *******************
+// 削除ボタンを押してすぐにレコードが削除されるのも問題なので、
+// 一旦JavaScriptで確認メッセージを流す。
+// *******************
 
+function deletePost(e){
+    'use strict';
+    if(confirm('本当に削除していいですか？')){
+        document.getElementById('delete_' + e.dataset.id).submit();
+    }
+}
+</script>
 @endsection

@@ -21,9 +21,9 @@
 </head>
 <body>
    <div id="app">
-       <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#0092b3; color:#fefefe;">
+       <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background-color:#ffffff; color:#fefefe;">
            <div class="container">
-               <a class="navbar-brand" style="color:#fefefe; font-size:1.4em" href="{{ url('/') }}" >
+               <a class="navbar-brand" style="color:#000000; font-size:1.4em" href="{{ url('/') }}" >
                    {{ config('app.name', 'Laravel') }}
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,16 +41,16 @@
                        <!-- Authentication Links -->
                        @guest
                            <li class="nav-item">
-                               <a class="nav-link" style="color:#fefefe;"  href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                               <a class="nav-link" style="color:#000000;"  href="{{ route('login') }}">{{ __('ログイン') }}</a>
                            </li>
                            @if (Route::has('register'))
                                <li class="nav-item">
-                                   <a class="nav-link" style="color:#fefefe;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
+                                   <a class="nav-link" style="color:#000000;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
                                </li>
                            @endif
                        @else
                            <li class="nav-item dropdown">
-                               <a id="navbarDropdown" style="color:#fefefe;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                               <a id="navbarDropdown" style="color:#000000;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    {{ Auth::user()->name }} <span class="caret"></span>
                                </a>
 
@@ -98,7 +98,7 @@
     @endguest
         <br>
         <div style="margin-top:24px;">
-    テストアプリにつき実際の売買は出来ません<br>
+            テストアプリにつき実際の売買は出来ません<br>
         <p style="font-size:2.4em">Buysell</p><br>
         </div>
 

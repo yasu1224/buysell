@@ -30,13 +30,9 @@ class HomeController extends Controller
 
         $query = DB::table('stocks');
 
-            // 検索フォームにもしキーワードが入力があれば
             if($search !== null){
-                // 全角スペースを半角にする
                 $search_split = mb_convert_kana($search,'s');
-                // 空白で区切る
                 $search_split2 = preg_split('/[\s]+/', $search_split,-1,PREG_SPLIT_NO_EMPTY);
-                // 単語をループで回す
                 foreach($search_split2 as $value)
                 {
                     $query->where('name', 'like', '%' .$value. '%');
@@ -47,11 +43,6 @@ class HomeController extends Controller
         $query->orderBy('created_at', 'asc');
         $stocks = $query->paginate(20);
 
-        // $is_image = false;
-        // if (Storage::disk('local')->exists('public/Stock_images/')) {
-        //     $is_image = true;
-        // }
-        // dd($contacts);
         return view('admin.index',  compact('stocks'));
     }
 
@@ -77,11 +68,8 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        // $contactという変数にContactForm::find($id);で情報を取り出す
         $stock = Stock::find($id);
-        // return view('contact.show')でshowで取り出した情報を表示させれるようにする
         return view('admin.show', 
-        // compact('contact', 'gender', 'age')は$を付けずに引数として渡すとshow.blade.phpで変数が使える
         compact('stock'));
     }
 

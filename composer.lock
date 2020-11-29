@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3c8f53efdd05b76fe03a068d61d0e43",
+    "content-hash": "4e0af5844b93d5ace92904fb92164838",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -4089,6 +4089,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
@@ -5863,7 +5864,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "ext-intl": "^7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
